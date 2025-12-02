@@ -7,7 +7,8 @@
     <style>
         /* Distill / Tufte Style CSS */
         :root {
-            --accent: #D04040; /* Distill Red */
+            --accent: #7a7a7a;
+            --contact-accent: #D04040; /* Keep a single vivid accent for contact */
             --bg: #FDFDFD;
             --text: #333;
             --secondary: #666;
@@ -59,6 +60,8 @@
         .top-row {
             display: flex;
             justify-content: flex-end;
+            align-self: flex-end;
+            width: 100%;
         }
 
         .lang-switch {
@@ -77,10 +80,10 @@
             transition: all 0.2s ease;
         }
         .lang-btn.active {
-            background: var(--accent);
+            background: #4a4a4a;
             color: white;
-            border-color: var(--accent);
-            box-shadow: 0 4px 10px rgba(208, 64, 64, 0.2);
+            border-color: #4a4a4a;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
         }
 
         /* Hero */
@@ -120,11 +123,11 @@
             background: #f4f4f4;
             padding: 1.3rem;
             border-radius: 10px;
-            border-left: 4px solid var(--accent);
+            border-left: 4px solid var(--contact-accent);
             margin-top: 0.5rem;
         }
 
-        .cta-box h4 { margin-bottom: 0.75rem; color: var(--accent); font-size: 1rem; }
+        .cta-box h4 { margin-bottom: 0.75rem; color: var(--contact-accent); font-size: 1rem; }
         .cta-box p { margin: 0 0 0.8rem 0; font-size: 0.95rem; color: #444; line-height: 1.5; }
         .cta-box ul { padding-left: 1.2rem; margin: 0; font-size: 0.95rem; color: #444; }
         .cta-box li { margin-bottom: 0.5rem; }
@@ -148,7 +151,7 @@
             border: 1px solid #eee;
             transition: all 0.2s ease;
         }
-        .contact-links a:hover { color: var(--accent); border-color: var(--accent); box-shadow: 0 8px 20px rgba(0,0,0,0.06); }
+        .contact-links a:hover { color: var(--contact-accent); border-color: var(--contact-accent); box-shadow: 0 8px 20px rgba(0,0,0,0.08); }
         .contact-icon { width: 18px; text-align: center; }
 
         .tag {
@@ -187,10 +190,10 @@
             transition: all 0.2s ease;
         }
         .tab-btn.active {
-            background: #fff1f1;
+            background: #f5f5f5;
             border-color: var(--accent);
-            color: #7a1414;
-            box-shadow: 0 10px 30px rgba(208, 64, 64, 0.15);
+            color: #222;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
         }
 
         .tab-panel { display: none; }
