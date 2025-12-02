@@ -47,96 +47,160 @@
 
         /* Layout */
         .container {
-            max-width: 1200px; /* Increased max-width for better balance with 33% sidebar */
+            max-width: 1080px;
             margin: 0 auto;
-            padding: 4rem 2rem;
-            display: grid;
-            grid-template-columns: 33% 1fr; /* Updated: Left part is 33% of width */
-            gap: 4rem;
+            padding: 3rem 1.5rem 4rem;
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
             min-height: 100vh;
         }
 
-        /* Sidebar / CTA */
-        .sidebar {
-            font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-            font-size: 0.95rem; /* Slightly larger for readability on wider column */
-            position: sticky;
-            top: 0;
+        .top-row {
             display: flex;
-            flex-direction: column;
-        }
-
-        .profile-img {
-            width: 100%;
-            max-width: 250px; /* Cap size so it doesn't get huge */
-            border-radius: 8px;
-            margin-bottom: 1.5rem;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            display: block;
+            justify-content: flex-end;
         }
 
         .lang-switch {
-            margin-bottom: 1.5rem;
-            display: flex;
+            display: inline-flex;
             gap: 10px;
         }
         .lang-btn {
             background: none;
             border: 1px solid #ccc;
-            border-radius: 4px;
-            padding: 4px 8px;
+            border-radius: 999px;
+            padding: 6px 10px;
             font-size: 0.8rem;
             cursor: pointer;
             font-family: -apple-system, BlinkMacSystemFont, sans-serif;
             color: #666;
+            transition: all 0.2s ease;
         }
         .lang-btn.active {
             background: var(--accent);
             color: white;
             border-color: var(--accent);
+            box-shadow: 0 4px 10px rgba(208, 64, 64, 0.2);
+        }
+
+        /* Hero */
+        .hero {
+            background: white;
+            padding: 2rem;
+            border-radius: 16px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.05);
+            display: grid;
+            grid-template-columns: 180px 1fr;
+            gap: 1.5rem;
+            align-items: center;
+        }
+
+        .profile-img {
+            width: 100%;
+            max-width: 220px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+        }
+
+        .hero-text {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        /* Cards */
+        .card {
+            background: white;
+            border-radius: 14px;
+            padding: 1.5rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
         }
 
         .cta-box {
             background: #f4f4f4;
-            padding: 1.5rem;
-            border-radius: 8px;
+            padding: 1.3rem;
+            border-radius: 10px;
             border-left: 4px solid var(--accent);
-            margin-bottom: 2rem;
+            margin-top: 0.5rem;
         }
 
         .cta-box h4 { margin-bottom: 0.75rem; color: var(--accent); font-size: 1rem; }
-        .cta-box p { margin: 0 0 0.8rem 0; font-size: 0.9rem; color: #444; line-height: 1.5; }
-        .cta-box ul { padding-left: 1.2rem; margin: 0; font-size: 0.9rem; color: #444; }
+        .cta-box p { margin: 0 0 0.8rem 0; font-size: 0.95rem; color: #444; line-height: 1.5; }
+        .cta-box ul { padding-left: 1.2rem; margin: 0; font-size: 0.95rem; color: #444; }
         .cta-box li { margin-bottom: 0.5rem; }
-        
+
+        .contact-links {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 0.8rem;
+            margin-top: 0.5rem;
+        }
         .contact-links a {
             display: flex;
             align-items: center;
-            margin-bottom: 0.8rem;
+            gap: 10px;
             color: var(--text);
             text-decoration: none;
-            font-weight: 500;
-            transition: color 0.2s;
+            font-weight: 600;
+            background: #fafafa;
+            padding: 0.75rem 1rem;
+            border-radius: 8px;
+            border: 1px solid #eee;
+            transition: all 0.2s ease;
         }
-        .contact-links a:hover { color: var(--accent); }
-        .contact-icon { margin-right: 10px; width: 18px; text-align: center; }
+        .contact-links a:hover { color: var(--accent); border-color: var(--accent); box-shadow: 0 8px 20px rgba(0,0,0,0.06); }
+        .contact-icon { width: 18px; text-align: center; }
 
         .tag {
             display: inline-block;
-            background: #eee;
-            padding: 3px 10px;
-            border-radius: 4px;
-            font-size: 0.8rem;
-            margin-right: 5px;
-            margin-bottom: 5px;
-            color: #555;
+            background: #f3f3f3;
+            padding: 6px 12px;
+            border-radius: 999px;
+            font-size: 0.85rem;
+            margin-right: 6px;
+            margin-bottom: 6px;
+            color: #444;
+            border: 1px solid #ececec;
         }
+
+        /* Tabs */
+        .tabs {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .tab-buttons {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 0.5rem;
+        }
+
+        .tab-btn {
+            padding: 0.9rem 1rem;
+            border-radius: 10px;
+            border: 1px solid #e5e5e5;
+            background: #fafafa;
+            font-weight: 600;
+            font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        .tab-btn.active {
+            background: #fff1f1;
+            border-color: var(--accent);
+            color: #7a1414;
+            box-shadow: 0 10px 30px rgba(208, 64, 64, 0.15);
+        }
+
+        .tab-panel { display: none; }
+        .tab-panel.active { display: block; }
 
         /* Timeline Styles */
         .timeline-phase {
             position: relative;
             padding-left: 2rem;
-            margin-bottom: 4rem;
+            margin-bottom: 3.5rem;
             border-left: 2px solid var(--timeline-line);
         }
 
@@ -195,91 +259,130 @@
 
         /* Responsive */
         @media (max-width: 768px) {
-            .container { grid-template-columns: 1fr; padding: 2rem 1.5rem; }
-            .sidebar { position: relative; top: 0; margin-bottom: 3rem; min-height: auto; height: auto; max-height: none; overflow: visible; }
-            .profile-img { max-width: 150px; margin-bottom: 1.5rem; }
+            .container { padding: 2rem 1.25rem; }
+            .hero { grid-template-columns: 1fr; text-align: center; }
+            .hero-text { align-items: center; }
+            .profile-img { margin: 0 auto; max-width: 180px; }
         }
     </style>
 </head>
 <body>
 
 <div class="container">
-
-    <aside class="sidebar">
-        <!-- Language Switcher -->
+    <div class="top-row">
         <div class="lang-switch">
             <button class="lang-btn active" onclick="setLang('en')">EN</button>
             <button class="lang-btn" onclick="setLang('ru')">RU</button>
             <button class="lang-btn" onclick="setLang('zh')">中文</button>
         </div>
+    </div>
 
-        <!-- Profile Image -->
+    <section class="hero">
         <img src="img/Gemini_Generated_Image_yi0p6zyi0p6zyi0p.jpg" alt="Vladimir Alexandrovich Naumov" class="profile-img">
+        <div class="hero-text">
+            <div>
+                <h1>
+                    <span lang="en">Vladimir Alexandrovich Naumov</span>
+                    <span lang="ru">Владимир Александрович Наумов</span>
+                    <span lang="zh">弗拉基米尔·亚历山德罗维奇·瑙莫夫</span>
+                </h1>
+                <div class="subtitle">
+                    <span lang="en">From Genomic Association to Generative Artificial Intelligence</span>
+                    <span lang="ru">От геномных ассоциаций к генеративному искусственному интеллекту</span>
+                    <span lang="zh">从基因组关联到生成式人工智能</span>
+                </div>
+                <p>
+                    <span lang="en">
+                        My scientific path has evolved from fundamental wet-lab genetics to pioneering
+                        <strong>Generative Biology</strong>. I build virtual research teams, multi-modal transformer models,
+                        and autonomous AI agents to accelerate therapeutic discovery.
+                    </span>
+                    <span lang="ru">
+                        Мой научный путь прошел эволюцию от фундаментальной генетики к передовой
+                        <strong>Генеративной Биологии</strong>. Я создаю виртуальные исследовательские команды, мультимодальные трансформеры
+                        и автономных AI-агентов для ускорения поиска новых лекарств.
+                    </span>
+                    <span lang="zh">
+                        我的科学道路已从基础湿实验遗传学演变为开创性的<strong>生成生物学</strong>。
+                        我构建虚拟研究团队、多模态 Transformer 模型和自主 AI 代理，以加速药物发现。
+                    </span>
+                </p>
+            </div>
 
-        <div class="cta-box">
-            <h4>
-                <span lang="en">Advisory for Series A Startups</span>
-                <span lang="ru">Консалтинг для стартапов (Series A)</span>
-                <span lang="zh">A轮初创企业咨询服务</span>
-            </h4>
-            
-            <p><strong>
+            <div class="cta-box">
+                <h4>
+                    <span lang="en">Advisory for Series A Startups</span>
+                    <span lang="ru">Консалтинг для стартапов (Series A)</span>
+                    <span lang="zh">A轮初创企业咨询服务</span>
+                </h4>
+                <p>
+                    <span lang="en">I bridge wet-lab biology and production-grade AI to validate your tech stack for Series B scaling. Ready to connect?</span>
+                    <span lang="ru">Соединяю мокрую биологию и промышленный ИИ, чтобы валидировать ваш технологический стек для масштабирования серии B. Готовы обсудить?</span>
+                    <span lang="zh">我弥合湿实验生物学与生产级 AI 之间的差距，帮助验证技术栈以实现 B 轮扩展。准备联系吗？</span>
+                </p>
+                <div class="contact-links">
+                    <a href="https://t.me/vovalive" target="_blank">
+                        <span class="contact-icon">➤</span> Telegram (Direct)
+                    </a>
+                    <a href="mailto:your.email@example.com">
+                        <span class="contact-icon">✉</span> Email Me
+                    </a>
+                    <a href="https://linkedin.com/in/yourprofile" target="_blank">
+                        <span class="contact-icon">in</span> LinkedIn
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="tabs">
+        <div class="tab-buttons">
+            <button class="tab-btn active" onclick="setTab('overview')" data-tab="overview">
+                <span lang="en">Profile & Offer</span>
+                <span lang="ru">Профиль и оффер</span>
+                <span lang="zh">简介与服务</span>
+            </button>
+            <button class="tab-btn" onclick="setTab('history')" data-tab="history">
+                <span lang="en">Scientific History</span>
+                <span lang="ru">Научная история</span>
+                <span lang="zh">科研历程</span>
+            </button>
+        </div>
+
+        <div class="card tab-panel active" data-tab="overview">
+            <h2>
                 <span lang="en">End-to-End AI Pipeline Architecture</span>
                 <span lang="ru">Сквозная архитектура AI-пайплайнов</span>
                 <span lang="zh">端到端人工智能管道架构</span>
-            </strong></p>
-            
+            </h2>
             <p>
-                <span lang="en">I bridge the gap between wet-lab biology and production-grade AI, helping startups validate their tech stack for Series B scaling.</span>
-                <span lang="ru">Я соединяю мокрую (wet-lab) биологию и промышленный ИИ, помогая стартапам валидировать технологический стек для масштабирования серии B.</span>
-                <span lang="zh">我弥合了湿实验生物学与生产级人工智能之间的差距，帮助初创企业验证其技术栈以实现B轮扩展。</span>
+                <span lang="en">I architect secure, cloud-agnostic pipelines that move from raw biological samples to production-grade AI outputs.</span>
+                <span lang="ru">Проектирую защищённые, облачно-агностичные пайплайны, которые переводят сырые биологические данные в промышленный AI.</span>
+                <span lang="zh">我设计安全、云无关的流程，将原始生物样本转化为生产级 AI 成果。</span>
             </p>
-            
             <ul>
                 <li>
-                    <span lang="en"><strong>Scalable Infrastructure:</strong> Design secure, cloud-agnostic MLOps environments (AWS/GCP) for high-throughput multi-omics data.</span>
-                    <span lang="ru"><strong>Масштабируемая инфраструктура:</strong> Проектирование защищенных MLOps сред (AWS/GCP) для высокопроизводительных мультиомных данных.</span>
-                    <span lang="zh"><strong>可扩展基础设施：</strong> 为高通量多组学数据设计安全、云无关的 MLOps 环境 (AWS/GCP)。</span>
+                    <span lang="en"><strong>Scalable Infrastructure:</strong> AWS/GCP MLOps for multi-omics data.</span>
+                    <span lang="ru"><strong>Масштабируемая инфраструктура:</strong> MLOps на AWS/GCP для мультиомных данных.</span>
+                    <span lang="zh"><strong>可扩展基础设施：</strong> 为多组学数据提供 AWS/GCP 的 MLOps。</span>
                 </li>
                 <li>
-                    <span lang="en"><strong>Generative Engines:</strong> Deploy custom LLMs & Transformers for target ID, de novo molecule design, and automated report generation.</span>
-                    <span lang="ru"><strong>Генеративные движки:</strong> Развертывание LLM и Трансформеров для поиска мишеней, de novo дизайна молекул и генерации отчетов.</span>
-                    <span lang="zh"><strong>生成式引擎：</strong> 部署定制的大型语言模型 (LLM) 和 Transformer，用于靶点识别、从头分子设计和自动化报告生成。</span>
+                    <span lang="en"><strong>Generative Engines:</strong> Custom LLMs and transformers for discovery and reporting.</span>
+                    <span lang="ru"><strong>Генеративные движки:</strong> Кастомные LLM и трансформеры для поиска и отчётности.</span>
+                    <span lang="zh"><strong>生成式引擎：</strong> 定制 LLM 和 Transformer，用于发现和报告。</span>
                 </li>
                 <li>
-                    <span lang="en"><strong>Strategic Roadmaps:</strong> "Buy vs. Build" technical strategy, AI team assembly, and regulatory-ready data governance.</span>
-                    <span lang="ru"><strong>Стратегия:</strong> Технический анализ "Buy vs. Build", формирование AI-команд и управление данными (Data Governance).</span>
-                    <span lang="zh"><strong>战略路线图：</strong> “购买与构建”技术战略、AI 团队组建以及符合监管要求的数据治理。</span>
+                    <span lang="en"><strong>Strategic Roadmaps:</strong> Build vs. buy analysis, team design, and governance.</span>
+                    <span lang="ru"><strong>Стратегия:</strong> Анализ build vs buy, формирование команды и управление данными.</span>
+                    <span lang="zh"><strong>战略路线：</strong> 自建或采购的策略、团队设计与治理。</span>
                 </li>
             </ul>
-        </div>
 
-        <div style="margin-bottom: 2rem;">
-            <h4>
-                <span lang="en">Connect</span>
-                <span lang="ru">Связаться</span>
-                <span lang="zh">联系方式</span>
-            </h4>
-            <div class="contact-links">
-                <a href="https://t.me/vovalive" target="_blank">
-                    <span class="contact-icon">➤</span> Telegram (Direct)
-                </a>
-                <a href="mailto:your.email@example.com">
-                    <span class="contact-icon">✉</span> Email Me
-                </a>
-                <a href="https://linkedin.com/in/yourprofile" target="_blank">
-                    <span class="contact-icon">in</span> LinkedIn
-                </a>
-            </div>
-        </div>
-
-        <div>
-            <h4>
+            <h3>
                 <span lang="en">Core Expertise</span>
                 <span lang="ru">Ключевые компетенции</span>
                 <span lang="zh">核心专长</span>
-            </h4>
-            
+            </h3>
             <div lang="en">
                 <span class="tag">Generative AI</span>
                 <span class="tag">Transformers</span>
@@ -288,7 +391,7 @@
                 <span class="tag">MLOps</span>
                 <span class="tag">Bioinformatics</span>
             </div>
-            
+
             <div lang="ru">
                 <span class="tag">Генеративный ИИ</span>
                 <span class="tag">Трансформеры</span>
@@ -307,191 +410,158 @@
                 <span class="tag">生物信息学</span>
             </div>
         </div>
-    </aside>
 
-    <main>
-        <header>
-            <h1>
-                <span lang="en">Vladimir Alexandrovich Naumov</span>
-                <span lang="ru">Владимир Александрович Наумов</span>
-                <span lang="zh">弗拉基米尔·亚历山德罗维奇·瑙莫夫</span>
-            </h1>
-            <div class="subtitle">
-                <span lang="en">From Genomic Association to Generative Artificial Intelligence</span>
-                <span lang="ru">От геномных ассоциаций к генеративному искусственному интеллекту</span>
-                <span lang="zh">从基因组关联到生成式人工智能</span>
-            </div>
-            <p>
-                <span lang="en">
-                    My scientific path has evolved from fundamental wet-lab genetics to pioneering 
-                    <strong>Generative Biology</strong>. I build virtual research teams, multi-modal transformer models, 
-                    and autonomous AI agents to accelerate therapeutic discovery.
-                </span>
-                <span lang="ru">
-                    Мой научный путь прошел эволюцию от фундаментальной генетики к передовой 
-                    <strong>Генеративной Биологии</strong>. Я создаю виртуальные исследовательские команды, мультимодальные трансформеры 
-                    и автономных AI-агентов для ускорения поиска новых лекарств.
-                </span>
-                <span lang="zh">
-                    我的科学道路已从基础湿实验遗传学演变为开创性的<strong>生成生物学</strong>。
-                    我构建虚拟研究团队、多模态 Transformer 模型和自主 AI 代理，以加速药物发现。
-                </span>
-            </p>
-        </header>
+        <div class="card tab-panel" data-tab="history">
+            <h2>
+                <span lang="en">Scientific History</span>
+                <span lang="ru">Научная история</span>
+                <span lang="zh">科研历程</span>
+            </h2>
 
-        <div class="timeline-phase">
-            <div class="phase-marker"></div>
-            <div class="phase-title">
-                <span lang="en">Phase III: The AI & Generative Biology Revolution (2021–Present)</span>
-                <span lang="ru">Этап III: Революция AI и Генеративной Биологии (2021–Наст. время)</span>
-                <span lang="zh">第三阶段：人工智能与生成生物学革命 (2021–至今)</span>
-            </div>
-            <p style="font-size: 0.95rem; color: #555; margin-bottom: 2rem;">
-                <em lang="en">Transition to high-tech industry. Focus on Transformers, Multi-Agent Systems, and AI-Driven Drug Discovery</em>
-                <em lang="ru">Переход в хайтек-индустрию. Фокус на Трансформерах, Мультиагентных системах и AI-дизайне лекарств.</em>
-                <em lang="zh">转型高科技产业。专注于 Transformer、多智能体系统和 AI 驱动的药物发现。</em>
-            </p>
+            <div class="timeline-phase">
+                <div class="phase-marker"></div>
+                <div class="phase-title">
+                    <span lang="en">Phase III: The AI & Generative Biology Revolution (2021–Present)</span>
+                    <span lang="ru">Этап III: Революция AI и Генеративной Биологии (2021–Наст. время)</span>
+                    <span lang="zh">第三阶段：人工智能与生成生物学革命 (2021–至今)</span>
+                </div>
+                <p style="font-size: 0.95rem; color: #555; margin-bottom: 2rem;">
+                    <em lang="en">Transition to high-tech industry. Focus on Transformers, Multi-Agent Systems, and AI-Driven Drug Discovery</em>
+                    <em lang="ru">Переход в хайтек-индустрию. Фокус на Трансформерах, Мультиагентных системах и AI-дизайне лекарств.</em>
+                    <em lang="zh">转型高科技产业。专注于 Transformer、多智能体系统和 AI 驱动的药物发现。</em>
+                </p>
 
-            <div class="article">
-                <div class="article-meta">2025 • bioRxiv</div>
-                <div class="article-title">Dora AI Scientist: Multi-agent Virtual Research Team for Scientific Exploration Discovery and Automated Report Generation</div>
-                <div class="abstract-box">
-                    <span lang="en"><strong>Key Abstract:</strong> We introduce a versatile multi-agent scientific exploration and draft outline research assistant (DORA). Under user guidance, it employs hierarchical teams of AI agents based on plug-and-play generalist and domain-specific LLMs. It automates hypothesis generation, data analysis, and report writing.</span>
-                    <span lang="ru"><strong>Абстракт:</strong> Мы представляем DORA — мультиагентного ассистента. Иерархические команды AI-агентов автоматизируют генерацию гипотез, анализ данных и написание отчетов, выступая как «виртуальная исследовательская группа».</span>
-                    <span lang="zh"><strong>摘要:</strong> 我们推出了多智能体科学探索与起草助手 DORA。在用户指导下，AI 代理团队可自动生成假设、分析数据并撰写报告，从而创建一个“虚拟研究团队”。</span>
+                <div class="article">
+                    <div class="article-meta">2025 • bioRxiv</div>
+                    <div class="article-title">Dora AI Scientist: Multi-agent Virtual Research Team for Scientific Exploration Discovery and Automated Report Generation</div>
+                    <div class="abstract-box">
+                        <span lang="en"><strong>Key Abstract:</strong> We introduce a versatile multi-agent scientific exploration and draft outline research assistant (DORA). Under user guidance, it employs hierarchical teams of AI agents based on plug-and-play generalist and domain-specific LLMs. It automates hypothesis generation, data analysis, and report writing.</span>
+                        <span lang="ru"><strong>Абстракт:</strong> Мы представляем DORA — мультиагентного ассистента. Иерархические команды AI-агентов автоматизируют генерацию гипотез, анализ данных и написание отчетов, выступая как «виртуальная исследовательская группа».</span>
+                        <span lang="zh"><strong>摘要:</strong> 我们推出了多智能体科学探索与起草助手 DORA。在用户指导下，AI 代理团队可自动生成假设、分析数据并撰写报告，从而创建一个“虚拟研究团队”。</span>
+                    </div>
+                </div>
+
+                <div class="article">
+                    <div class="article-meta">2024 • bioRxiv</div>
+                    <div class="article-title">Precious3GPT: Multimodal Multi-Species Multi-Omics Multi-Tissue Transformer for Aging Research</div>
+                    <div class="abstract-box">
+                        <span lang="en"><strong>Key Abstract:</strong> A landmark multimodal transformer model trained on vast biological datasets. It treats biological data (omics, tissue types, species) as a language, allowing for the generation of synthetic data and the identification of novel therapeutic targets for aging.</span>
+                        <span lang="ru"><strong>Абстракт:</strong> Мультимодальная модель трансформера, обученная на огромных био-датасетах. Она трактует биологические данные как язык, позволяя генерировать синтетические данные и искать новые мишени старения.</span>
+                        <span lang="zh"><strong>摘要:</strong> 基于海量生物数据训练的里程碑式多模态 Transformer 模型。它将生物数据视为一种语言，允许生成合成数据并识别衰老的新治疗靶点。</span>
+                    </div>
+                </div>
+
+                <div class="article">
+                    <div class="article-meta">2023 • Chemical Science</div>
+                    <div class="article-title">AlphaFold accelerates artificial intelligence powered drug discovery: Efficient discovery of a novel CDK20 inhibitor</div>
+                    <div class="abstract-box">
+                        <span lang="en"><strong>Key Abstract:</strong> Demonstrating the first application of AlphaFold in a hit identification process. We utilized AlphaFold predicted structures to discover a novel small molecule inhibitor for CDK20 in under 30 days.</span>
+                        <span lang="ru"><strong>Абстракт:</strong> Первое применение AlphaFold для поиска хитов. Мы использовали предсказанные структуры для открытия нового ингибитора CDK20 менее чем за 30 дней.</span>
+                        <span lang="zh"><strong>摘要:</strong> 展示了 AlphaFold 在苗头化合物识别过程中的首次应用。我们在 30 天内发现了一种新型 CDK20 小分子抑制剂。</span>
+                    </div>
+                </div>
+
+                <div class="article">
+                    <div class="article-meta">2024 • npj Aging</div>
+                    <div class="article-title">Precious2GPT: The combination of multiomics pretrained transformer and conditional diffusion</div>
+                </div>
+                <div class="article">
+                    <div class="article-meta">2023 • Aging (Albany NY)</div>
+                    <div class="article-title">Precious1GPT: Multimodal transformer-based transfer learning for aging clock development</div>
+                </div>
+                 <div class="article">
+                    <div class="article-meta">2021 • PLoS Computational Biology</div>
+                    <div class="article-title">COVIDomic: A multi-modal cloud-based platform for identification of risk factors</div>
                 </div>
             </div>
 
-            <div class="article">
-                <div class="article-meta">2024 • bioRxiv</div>
-                <div class="article-title">Precious3GPT: Multimodal Multi-Species Multi-Omics Multi-Tissue Transformer for Aging Research</div>
-                <div class="abstract-box">
-                    <span lang="en"><strong>Key Abstract:</strong> A landmark multimodal transformer model trained on vast biological datasets. It treats biological data (omics, tissue types, species) as a language, allowing for the generation of synthetic data and the identification of novel therapeutic targets for aging.</span>
-                    <span lang="ru"><strong>Абстракт:</strong> Мультимодальная модель трансформера, обученная на огромных био-датасетах. Она трактует биологические данные как язык, позволяя генерировать синтетические данные и искать новые мишени старения.</span>
-                    <span lang="zh"><strong>摘要:</strong> 基于海量生物数据训练的里程碑式多模态 Transformer 模型。它将生物数据视为一种语言，允许生成合成数据并识别衰老的新治疗靶点。</span>
+            <div class="timeline-phase">
+                <div class="phase-marker" style="border-color: #666;"></div>
+                <div class="phase-title">
+                    <span lang="en">Phase II: Systems Biology, Reproductive Health & Tool Development (2015–2020)</span>
+                    <span lang="ru">Этап II: Системная биология и разработка инструментов (2015–2020)</span>
+                    <span lang="zh">第二阶段：系统生物学与工具开发 (2015–2020)</span>
+                </div>
+                <p style="font-size: 0.95rem; color: #555; margin-bottom: 2rem;">
+                    <em lang="en">Shift from single genes to transcriptomics and epigenetics. Development of bioinformatics algorithms and clinical decision support systems.</em>
+                    <em lang="ru">Переход от отдельных генов к транскриптомике и эпигенетике. Разработка биоинформатических алгоритмов и систем поддержки принятия клинических решений.</em>
+                    <em lang="zh">从单基因转向转录组学和表观遗传学。开发生物信息学算法和临床决策支持系统。</em>
+                </p>
+
+                <div class="article">
+                    <div class="article-meta">2017 • bioRxiv</div>
+                    <div class="article-title">VolcanoR-web service to produce volcano plots and do basic enrichment analysis</div>
+                    <div class="abstract-box">
+                        <span lang="en"><strong>Key Abstract:</strong> Development of an accessible web service (R Shiny) that democratized bioinformatics visualization. It allowed users to instantly generate publication-quality volcano plots.</span>
+                        <span lang="ru"><strong>Абстракт:</strong> Веб-сервис (R Shiny), демократизировавший биоинформатическую визуализацию. Позволяет мгновенно строить volcano plots публикационного качества.</span>
+                        <span lang="zh"><strong>摘要:</strong> 开发了一个易于访问的 Web 服务 (R Shiny)，使得生物信息学可视化大众化。它允许用户立即生成出版级质量的火山图。</span>
+                    </div>
+                </div>
+
+                <div class="article">
+                    <div class="article-meta">2020 • Epigenomics</div>
+                    <div class="article-title">Rat liver epigenome programing by perinatal exposure to flame retardants</div>
+                </div>
+                <div class="article">
+                    <div class="article-meta">2019 • European Journal of Human Genetics</div>
+                    <div class="article-title">The first private all-Russian genome initiative - #500genomes from Zenome</div>
+                </div>
+                <div class="article">
+                    <div class="article-meta">2017 • Gynecological Endocrinology</div>
+                    <div class="article-title">Transcription profile analysis of the endometrium: Molecular markers of the ‘window of implantation’</div>
+                </div>
+                <div class="article">
+                    <div class="article-meta">2016 • Cell Cycle</div>
+                    <div class="article-title">An integrative analysis of reprogramming in human isogenic system identified a clone selection criterion</div>
                 </div>
             </div>
 
-            <div class="article">
-                <div class="article-meta">2023 • Chemical Science</div>
-                <div class="article-title">AlphaFold accelerates artificial intelligence powered drug discovery: Efficient discovery of a novel CDK20 inhibitor</div>
-                <div class="abstract-box">
-                    <span lang="en"><strong>Key Abstract:</strong> Demonstrating the first application of AlphaFold in a hit identification process. We utilized AlphaFold predicted structures to discover a novel small molecule inhibitor for CDK20 in under 30 days.</span>
-                    <span lang="ru"><strong>Абстракт:</strong> Первое применение AlphaFold для поиска хитов. Мы использовали предсказанные структуры для открытия нового ингибитора CDK20 менее чем за 30 дней.</span>
-                    <span lang="zh"><strong>摘要:</strong> 展示了 AlphaFold 在苗头化合物识别过程中的首次应用。我们在 30 天内发现了一种新型 CDK20 小分子抑制剂。</span>
+            <div class="timeline-phase">
+                <div class="phase-marker" style="border-color: #999;"></div>
+                <div class="phase-title">
+                    <span lang="en">Phase I: The Genomic Association Era (2012–2015)</span>
+                    <span lang="ru">Этап I: Эра геномных ассоциаций (2012–2015)</span>
+                    <span lang="zh">第一阶段：基因组关联时代 (2012–2015)</span>
                 </div>
-            </div>
+                <p style="font-size: 0.95rem; color: #555; margin-bottom: 2rem;">
+                    <em lang="en">Foundational research in molecular genetics. Investigating SNPs associated with oncology (bone tumors) and athletic performance.</em>
+                    <em lang="ru">Фундаментальные исследования в молекулярной генетике. Поиск SNP, связанных с онкологией и спортивной генетикой.</em>
+                    <em lang="zh">分子遗传学的基础研究。调查与肿瘤学（骨肿瘤）和运动表现相关的 SNP。</em>
+                </p>
 
-            <div class="article">
-                <div class="article-meta">2024 • npj Aging</div>
-                <div class="article-title">Precious2GPT: The combination of multiomics pretrained transformer and conditional diffusion</div>
-            </div>
-            <div class="article">
-                <div class="article-meta">2023 • Aging (Albany NY)</div>
-                <div class="article-title">Precious1GPT: Multimodal transformer-based transfer learning for aging clock development</div>
-            </div>
-             <div class="article">
-                <div class="article-meta">2021 • PLoS Computational Biology</div>
-                <div class="article-title">COVIDomic: A multi-modal cloud-based platform for identification of risk factors</div>
+                <div class="article">
+                    <div class="article-meta">2015 • Biology of Sport</div>
+                    <div class="article-title">Genome-wide association study identifies three novel genetic markers associated with elite endurance performance</div>
+                </div>
+                <div class="article">
+                    <div class="article-meta">2014 • Experimental Physiology</div>
+                    <div class="article-title">AGTR2 gene polymorphism is associated with muscle fibre composition and athletic status</div>
+                </div>
+                <div class="article">
+                    <div class="article-meta">2012 • Bulletin of Exp. Bio. & Med.</div>
+                    <div class="article-title">Association of FGFR3 and MDM2 gene nucleotide polymorphisms with bone tumors</div>
+                </div>
             </div>
         </div>
-
-        <div class="timeline-phase">
-            <div class="phase-marker" style="border-color: #666;"></div>
-            <div class="phase-title">
-                <span lang="en">Phase II: Systems Biology, Reproductive Health & Tool Development (2015–2020)</span>
-                <span lang="ru">Этап II: Системная биология и разработка инструментов (2015–2020)</span>
-                <span lang="zh">第二阶段：系统生物学与工具开发 (2015–2020)</span>
-            </div>
-            <p style="font-size: 0.95rem; color: #555; margin-bottom: 2rem;">
-                <em lang="en">Shift from single genes to transcriptomics and epigenetics. Development of bioinformatics algorithms and clinical decision support systems.</em>
-                <em lang="ru">Переход от отдельных генов к транскриптомике и эпигенетике. Разработка биоинформатических алгоритмов и систем поддержки принятия клинических решений.</em>
-                <em lang="zh">从单基因转向转录组学和表观遗传学。开发生物信息学算法和临床决策支持系统。</em>
-            </p>
-
-            <div class="article">
-                <div class="article-meta">2017 • bioRxiv</div>
-                <div class="article-title">VolcanoR-web service to produce volcano plots and do basic enrichment analysis</div>
-                <div class="abstract-box">
-                    <span lang="en"><strong>Key Abstract:</strong> Development of an accessible web service (R Shiny) that democratized bioinformatics visualization. It allowed users to instantly generate publication-quality volcano plots.</span>
-                    <span lang="ru"><strong>Абстракт:</strong> Веб-сервис (R Shiny), демократизировавший биоинформатическую визуализацию. Позволяет мгновенно строить volcano plots публикационного качества.</span>
-                    <span lang="zh"><strong>摘要:</strong> 开发了一个易于访问的 Web 服务 (R Shiny)，使得生物信息学可视化大众化。它允许用户立即生成出版级质量的火山图。</span>
-                </div>
-            </div>
-
-            <div class="article">
-                <div class="article-meta">2020 • Epigenomics</div>
-                <div class="article-title">Rat liver epigenome programing by perinatal exposure to flame retardants</div>
-            </div>
-            <div class="article">
-                <div class="article-meta">2019 • European Journal of Human Genetics</div>
-                <div class="article-title">The first private all-Russian genome initiative - #500genomes from Zenome</div>
-            </div>
-            <div class="article">
-                <div class="article-meta">2017 • Gynecological Endocrinology</div>
-                <div class="article-title">Transcription profile analysis of the endometrium: Molecular markers of the ‘window of implantation’</div>
-            </div>
-            <div class="article">
-                <div class="article-meta">2016 • Cell Cycle</div>
-                <div class="article-title">An integrative analysis of reprogramming in human isogenic system identified a clone selection criterion</div>
-            </div>
-        </div>
-
-        <div class="timeline-phase">
-            <div class="phase-marker" style="border-color: #999;"></div>
-            <div class="phase-title">
-                <span lang="en">Phase I: The Genomic Association Era (2012–2015)</span>
-                <span lang="ru">Этап I: Эра геномных ассоциаций (2012–2015)</span>
-                <span lang="zh">第一阶段：基因组关联时代 (2012–2015)</span>
-            </div>
-            <p style="font-size: 0.95rem; color: #555; margin-bottom: 2rem;">
-                <em lang="en">Foundational research in molecular genetics. Investigating SNPs associated with oncology (bone tumors) and athletic performance.</em>
-                <em lang="ru">Фундаментальные исследования в молекулярной генетике. Поиск SNP, связанных с онкологией и спортивной генетикой.</em>
-                <em lang="zh">分子遗传学的基础研究。调查与肿瘤学（骨肿瘤）和运动表现相关的 SNP。</em>
-            </p>
-
-            <div class="article">
-                <div class="article-meta">2015 • Biology of Sport</div>
-                <div class="article-title">Genome-wide association study identifies three novel genetic markers associated with elite endurance performance</div>
-            </div>
-            <div class="article">
-                <div class="article-meta">2014 • Experimental Physiology</div>
-                <div class="article-title">AGTR2 gene polymorphism is associated with muscle fibre composition and athletic status</div>
-            </div>
-            <div class="article">
-                <div class="article-meta">2012 • Bulletin of Exp. Bio. & Med.</div>
-                <div class="article-title">Association of FGFR3 and MDM2 gene nucleotide polymorphisms with bone tumors</div>
-            </div>
-        </div>
-
-    </main>
+    </div>
 </div>
 
 <script>
     function setLang(lang) {
-        // Remove active class from all buttons
         document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
-        
-        // Add active class to clicked button
         const btnText = lang === 'en' ? 'EN' : lang === 'ru' ? 'RU' : '中文';
         const buttons = Array.from(document.querySelectorAll('.lang-btn'));
         const activeBtn = buttons.find(b => b.innerText === btnText);
         if(activeBtn) activeBtn.classList.add('active');
 
-        // Select only elements with [lang] attribute that are INSIDE the body
-        // This prevents selecting the <html lang="en"> tag which caused the white page
         document.querySelectorAll('body [lang]').forEach(el => {
             if (el.getAttribute('lang') === lang) {
-                // Restore visibility
-                // Check for block-level elements
                 if( ['DIV', 'P', 'LI', 'H1', 'H2', 'H3', 'H4', 'UL', 'SECTION'].includes(el.tagName) ) {
                      el.style.display = 'block';
-                } 
-                // Check for inline-block elements (like tags)
-                else if(el.tagName === 'SPAN' && el.classList.contains('tag')) {
+                }
+                else if(el.tagName === 'BUTTON' || (el.tagName === 'SPAN' && el.classList.contains('tag'))) {
                     el.style.display = 'inline-block';
-                } 
-                // Default to inline for spans, ems, strongs, etc.
+                }
                 else {
                     el.style.display = 'inline';
                 }
@@ -501,8 +571,17 @@
         });
     }
 
-    // Initialize English
+    function setTab(tab) {
+        document.querySelectorAll('.tab-btn').forEach(btn => {
+            btn.classList.toggle('active', btn.dataset.tab === tab);
+        });
+        document.querySelectorAll('.tab-panel').forEach(panel => {
+            panel.classList.toggle('active', panel.dataset.tab === tab);
+        });
+    }
+
     setLang('en');
+    setTab('overview');
 </script>
 
 </body>
