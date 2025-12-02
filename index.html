@@ -59,7 +59,8 @@
             font-family: -apple-system, BlinkMacSystemFont, sans-serif;
             font-size: 0.95rem; /* Slightly larger for readability on wider column */
             position: sticky;
-            top: 4rem;
+            top: 0;
+            min-height: calc(100vh - 8rem); /* Fill viewport height while respecting container padding */
             height: fit-content;
         }
 
@@ -193,7 +194,7 @@
         /* Responsive */
         @media (max-width: 768px) {
             .container { grid-template-columns: 1fr; padding: 2rem 1.5rem; }
-            .sidebar { position: relative; top: 0; margin-bottom: 3rem; }
+            .sidebar { position: relative; top: 0; margin-bottom: 3rem; min-height: auto; }
             .profile-img { max-width: 150px; margin-bottom: 1.5rem; }
         }
     </style>

@@ -17,3 +17,6 @@ python3 -m http.server 8000
 ```
 
 Then open `http://localhost:8000` in your browser.
+
+## Profile image
+To avoid committing large binaries, the profile image referenced by `index.html` (`img/Gemini_Generated_Image_yi0p6zyi0p6zyi0p.jpg`) is not tracked in the repository. Place the image manually in the `img/` directory when deploying or testing locally so the sidebar photo renders correctly.
